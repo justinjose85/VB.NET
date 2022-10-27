@@ -134,12 +134,12 @@ Private Sub Main()
         oFlag(0) = False
         oFlag(1) = False
         oFlag(2) = False
-		oFlag(3) = False
-		oFlag(4) = False
-		oFlag(5) = False
-		oFlag(6) = False
-		oFlag(7) = False
-		oFlag(8) = False
+	oFlag(3) = False
+	oFlag(4) = False
+	oFlag(5) = False
+	oFlag(6) = False
+	oFlag(7) = False
+	oFlag(8) = False
 
         For i As Integer = 1 To oFamily.TableColumns.Count
             If oFamily.TableColumns.Item(i).InternalName = "Artikelnummer" Then
