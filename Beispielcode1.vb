@@ -47,7 +47,7 @@ Orientierung = 10243
 RowMax = 45
 PrtHigtMax = 23.1
 'ElseIf temp = "ET-Deckblatt.idw" Then
-'vorlage = "A:\VorlagenStile2021\Vorlagen\ET-Deckblatt.idw"
+'vorlage = "*Deckblatt.idw"
 'Schriftfelder1 = "Ersatzteil Deckblatt"
 'Schriftfelder2 = "Ersatzteil Deckblatt"
 End If
