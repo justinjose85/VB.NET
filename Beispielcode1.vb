@@ -27,7 +27,7 @@ Dim oDrawDoc As DrawingDocument = ThisApplication.ActiveDocument
 Docloc = oDrawDoc.FullFilename
 oRevision = oDrawDoc.PropertySets.Item("Inventor User Defined Properties").Item("AIMD_REVISION").Value
 If temp = "ET.idw" Then
-vorlage = "A:\VorlagenStile2021\Vorlagen\ET.idw"
+vorlage = "*ET.idw*"
 Schriftfelder1 = "Ersatzteil A4 DE,GB"
 Schriftfelder2 = "Ersatzteil Stückliste"
 Stuekliste = "Stückliste(DIN)_Quer_ET"
@@ -37,7 +37,7 @@ Orientierung = 10242
 RowMax = 28
 PrtHigtMax = 14.1
 ElseIf temp = "ET-Inhaltsverzeichnis.idw" Then
-vorlage = "A:\VorlagenStile2021\Vorlagen\ET-Inhaltsverzeichnis.idw"
+vorlage = "*nis.idw*"
 Schriftfelder1 = "Ersatzteil A4 DE,GB Inhaltsverzeichnis"
 Schriftfelder2 = "Ersatzteil Inhaltsverzeichnis Stückliste"
 Stuekliste = "Stückliste(DIN)_HOCH_ET"
@@ -137,11 +137,6 @@ For l = 3 To oSheetcountreq
 If oSheetcountreq > oNewDoc.Sheets.Count Then
 oNewDoc.Sheets.Add()
 oNewDoc.ActiveSheet.Size = DrawingSheetSizeEnum.kA4DrawingSheetSize
-'ActiveSheet.ChangeSize("A4", MoveBorderItems := True)
-'oNewDoc.Sheets.Item(l).AddTitleBlock(Schriftfelder2)
-'oNewDoc.Sheets.Item(l).Orientation  = Orientierung
-'ActiveSheet.TitleBlock = Schriftfelder
-'ThisApplication.ActiveDocument.ActiveSheet.Orientation=Orientierung
 End If
 
 If oNewDoc.Sheets.Item(l).DrawingViews.Count < 1 Then
