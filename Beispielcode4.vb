@@ -35,7 +35,7 @@ stopWatch.Start()
 	
 	If oFileType = True Then
 	ThisApplication.StatusBarText=System.IO.Path.GetFileNameWithoutExtension(oOcc.Definition.Document.FullFileName) & "   " & oOcc.Name 
-	j = GoExcel.FindRow("A:\VorlagenStile2021\Design Data\iLogic\Inhaltscenter Liste\Inhaltscenter Liste.xlsx", "Tabelle1", "Artikelnummer", "=", oArtNr)
+	j = GoExcel.FindRow("*Liste.xlsx*", "Tabelle1", "Artikelnummer", "=", oArtNr)
 	oPfad = GoExcel.CurrentRowValue("Pfad")
 	
 	If Not j < 1 Then 'vbNullString Then 
@@ -68,7 +68,7 @@ stopWatch.Start()
 	End If
 	
 	If oFilenewType = True Then
-	k = GoExcel.FindRow("A:\VorlagenStile2021\Design Data\iLogic\Inhaltscenter Liste\Inhaltscenter Liste.xlsx", "Tabelle1", "Artikelnummer", "=", oArtNr)
+	k = GoExcel.FindRow("*Liste.xlsx*", "Tabelle1", "Artikelnummer", "=", oArtNr)
 	
 	
 	If Not k < 1 Then
@@ -133,9 +133,9 @@ On Error Resume Next
 			'oOcc.Definition.Document.DisplayName=""
 		If oOcc.DefinitionDocumentType = kAssemblyDocumentObject Then 
 			oTitle = InvSumInfo.ItemByPropId(2).Value'Title
-			oRevisn = InvDocSum.Item("AIMD_REVISION").Value 'Revision
+			oRevisn = InvDocSum.Item("REVISION").Value 'Revision
 			If oRevisn = "" Then oRevisn = "0"
-   			oArtkNr = InvDocSum.Item("AIMD_PARTNO").Value'Artiklenummer
+   			oArtkNr = InvDocSum.Item("PARTNO").Value'Artiklenummer
 			If oArtkNr <> "" Then
 			oOcc.Name = oArtkNr & "  " & oTitle & " ("& oRevisn & ") :"  & Assemblynum
 			Else
@@ -147,11 +147,11 @@ On Error Resume Next
 		Else
 		    
 			oTitle = InvSumInfo.ItemByPropId(2).Value'Title
-			oRevisn = InvDocSum.Item("AIMD_REVISION").Value 'Revision
+			oRevisn = InvDocSum.Item("REVISION").Value 'Revision
 			If oRevisn = "" Then oRevisn = "0"
-			oAbmesng = InvDocSum.Item("AVV_ABMESSUNG").Value'Abmessung
+			oAbmesng = InvDocSum.Item("ABMESSUNG").Value'Abmessung
 			oMaterl = DesTraProp.ItemByPropId(20).Value'Material
-			oArtkNr = InvDocSum.Item("AIMD_PARTNO").Value'Artiklenummer
+			oArtkNr = InvDocSum.Item("PARTNO").Value'Artiklenummer
 			If oArtkNr <> "" Then
 			oOcc.Name =oArtkNr & "  " & oTitle & " ("& oRevisn & ") (" & oAbmesng & ") ("& oMaterl & ") :"  & Partnum
 			Else
