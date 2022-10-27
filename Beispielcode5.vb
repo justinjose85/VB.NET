@@ -15,9 +15,9 @@ If ThisApplication.ActiveDocument.DocumentType = kDrawingDocumentObject Then '1
 Dim oDrawDoc As DrawingDocument = ThisApplication.ActiveDocument
 Docloc = oDrawDoc.FullFilename
 oRevision = oDrawDoc.PropertySets.Item("Inventor User Defined Properties").Item("AIMD_REVISION").Value
-vorlage = "A:\VorlagenStile2021\Vorlagen\Norm.idw"
+		vorlage = "*pfad*"
 Raender =	"Standard"
-Schriftfelder = "Strautmann ISO 7200"
+		Schriftfelder = "*feldername*"
 
 Dim Sheet1 As Sheet = oDrawDoc.Sheets.Item(1)
 Dim oTitleBlock As TitleBlock = Sheet1.TitleBlock
@@ -175,7 +175,7 @@ Dim oNode As BrowserNode
 For Each oNode In oTopNode.BrowserNodes 
 oNode.Expanded = False 
 Next
-oNewDoc.PropertySets.Item("Inventor User Defined Properties").Item("AIMD_REVISION").Value = oRevision
+oNewDoc.PropertySets.Item("Inventor User Defined Properties").Item("*REVISION*").Value = oRevision
 oNewDoc.PropertySets.Item("Inventor Summary Information").Item("Revision Number").Value = oRevision
 
 InventorVb.DocumentUpdate()
